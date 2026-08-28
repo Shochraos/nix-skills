@@ -3,11 +3,11 @@
     "nixos-skill": {
       "flake": false,
       "locked": {
-        "lastModified": 1787821910,
-        "narHash": "sha256-rGRWx6Nn0GFtVaxbnuCluoR7hv4uc+2gp6GWTC2wL1E=",
+        "lastModified": 1787908553,
+        "narHash": "sha256-iKaphYeSW5DdcermWui4MzA22UjqqvRVANT+H9K1NoE=",
         "owner": "marceloeatworld",
         "repo": "nixos-ai-skill",
-        "rev": "39e78700ce39b22d0e60847472412905bd6878c2",
+        "rev": "1e33573676e522afbfb999fbc68a62af82f0ad51",
         "type": "github"
       },
       "original": {
