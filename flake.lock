@@ -1,0 +1,95 @@
+{
+  "nodes": {
+    "nixos-skill": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1787821910,
+        "narHash": "sha256-rGRWx6Nn0GFtVaxbnuCluoR7hv4uc+2gp6GWTC2wL1E=",
+        "owner": "marceloeatworld",
+        "repo": "nixos-ai-skill",
+        "rev": "39e78700ce39b22d0e60847472412905bd6878c2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "marceloeatworld",
+        "repo": "nixos-ai-skill",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1787736819,
+        "narHash": "sha256-cV5xEJJK3BvhU8rEd4mC9UsmDi5qscv/kzGPhBRC5WA=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "9fbb54b33e91ee4ca368e35a78e0613c720600b3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixos-skill": "nixos-skill",
+        "nixpkgs": "nixpkgs",
+        "superpowers": "superpowers",
+        "vercel-skills": "vercel-skills",
+        "wshobson-agents": "wshobson-agents"
+      }
+    },
+    "superpowers": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786553601,
+        "narHash": "sha256-EsGNO0dULWf5Bx6bGrCv2kI2Z8aKH0kRvGiuN23wChQ=",
+        "owner": "obra",
+        "repo": "superpowers",
+        "rev": "b36e0829c6d0140e93cfef2ca599b1b07d4a7797",
+        "type": "github"
+      },
+      "original": {
+        "owner": "obra",
+        "repo": "superpowers",
+        "type": "github"
+      }
+    },
+    "vercel-skills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1787084911,
+        "narHash": "sha256-qD+gGPYjgbArf1Nz5rtlJVCS/2KNTuspag/B079l014=",
+        "owner": "vercel-labs",
+        "repo": "skills",
+        "rev": "435076e78988e1e6ec40d00b0b1d76bdbbc5419a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vercel-labs",
+        "repo": "skills",
+        "type": "github"
+      }
+    },
+    "wshobson-agents": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1787746448,
+        "narHash": "sha256-QiRuhAJflKylpj5UW8ySyUz29K3Y34Vx4sCMfGl23Bg=",
+        "owner": "wshobson",
+        "repo": "agents",
+        "rev": "38e19c20d2b154510b0e624a2e3e186b19b5c527",
+        "type": "github"
+      },
+      "original": {
+        "owner": "wshobson",
+        "repo": "agents",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
