@@ -32,10 +32,27 @@
         "type": "github"
       }
     },
+    "qt-agent-skills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1783603773,
+        "narHash": "sha256-YHWVYn3m2dYV/brBlYn6nuxVV810+B4geKqfwiJuOHU=",
+        "owner": "TheQtCompanyRnD",
+        "repo": "agent-skills",
+        "rev": "71d6c10da78b9a764468ae11c86ab3bc4ca4921f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "TheQtCompanyRnD",
+        "repo": "agent-skills",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "nixos-skill": "nixos-skill",
         "nixpkgs": "nixpkgs",
+        "qt-agent-skills": "qt-agent-skills",
         "superpowers": "superpowers",
         "vercel-skills": "vercel-skills",
         "wshobson-agents": "wshobson-agents"

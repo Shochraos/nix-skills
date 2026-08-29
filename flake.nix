@@ -23,6 +23,10 @@
       url = "github:wshobson/agents";
       flake = false;
     };
+    qt-agent-skills = {
+      url = "github:TheQtCompanyRnD/agent-skills";
+      flake = false;
+    };
   };
 
   outputs =
@@ -33,6 +37,7 @@
       nixos-skill,
       vercel-skills,
       wshobson-agents,
+      qt-agent-skills,
     }:
     let
       systems = [
@@ -52,7 +57,12 @@
               src = superpowers;
             };
             vendored-skills = pkgs.callPackage ./pkgs/vendored-skills/package.nix {
-              inherit (inputs) nixos-skill vercel-skills wshobson-agents;
+              inherit (inputs)
+                nixos-skill
+                vercel-skills
+                wshobson-agents
+                qt-agent-skills
+                ;
             };
           };
         in

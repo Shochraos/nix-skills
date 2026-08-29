@@ -5,6 +5,7 @@
   nixos-skill,
   vercel-skills,
   wshobson-agents,
+  qt-agent-skills,
 }:
 let
   createReadmeSkill = fetchurl {
@@ -147,11 +148,18 @@ runCommandLocal "vendored-skills"
     cp -r ${nixos-skill} $out/nixos
     cp -r ${vercel-skills}/skills/find-skills $out/find-skills
     cp -r ${wshobson-agents}/plugins/python-development/skills/. $out/
+    cp -r ${qt-agent-skills}/skills/qt-qml $out/qt-qml
+    cp -r ${qt-agent-skills}/skills/qt-qml-review $out/qt-qml-review
+    cp -r ${qt-agent-skills}/skills/qt-cmake-project $out/qt-cmake-project
+    cp -r ${wshobson-agents}/plugins/shell-scripting/skills/. $out/
+    cp -r ${wshobson-agents}/plugins/systems-programming/skills/memory-safety-patterns $out/memory-safety-patterns
+    cp -r ${wshobson-agents}/plugins/cicd-automation/skills/github-actions-templates $out/github-actions-templates
     install -Dm644 ${createReadmeSkill} $out/create-readme/SKILL.md
 
     chmod -R u+w $out
 
     rm -rf ${lib.concatMapStringsSep " " (f: "$out/nixos/${f}") droppedNixosFiles}
+    rm -f $out/qt-qml/README.md $out/qt-qml-review/README.md $out/qt-cmake-project/README.md
     ${applyRewrites}
 
     for dir in $out/*/; do
