@@ -70,6 +70,9 @@
                 anthropics-skills
                 ;
             };
+            managed-skills = pkgs.callPackage ./pkgs/managed-skills/package.nix {
+              src = ./skills;
+            };
           };
         in
         payloads
