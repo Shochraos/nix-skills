@@ -26,6 +26,7 @@ The three payloads are deliberately separate derivations — needle edits, `sed`
 ### Auto-update
 
 Every Monday 06:00 UTC (and on manual dispatch), the `update-skill-sources` workflow bumps the six skill inputs, runs `nix flake check`, and pushes `flake.lock` only when the build is green and the lock actually changed. nixpkgs is deliberately not auto-bumped, so the lock diff stays focused on skills. If a gate trips, the run is red and consumers keep building the last pinned rev.
+Every push to any branch (and manual dispatch) also runs the `build-packages` workflow: a fresh `nix flake check` on a clean runner, so a commit that breaks evaluation or a gate goes red right away instead of surfacing at the next weekly update.
 
 ## Usage
 
@@ -60,11 +61,12 @@ pkgs/vendored-skills/package.nix      the sed-edited payload
 pkgs/managed-skills/package.nix       the verbatim self-authored payload
 skills/                               the self-authored sources it packages
 .github/workflows/update-skill-sources.yml   the weekly auto-updater
+.github/workflows/build-packages.yml   the per-commit build gate
 ```
 
 ## Development
 
-`nix develop` provides `nixfmt` and `nixd`. `nix fmt` formats, and `nix build` doubles as the gate run — all three payloads build through `writeShellApplication`-style checks and the banned-pattern gates.
+`nix develop` provides `nixfmt` and `nixd`. `nix fmt` formats, and `nix build` doubles as the gate run: every payload is a `runCommandLocal` whose build script runs the banned-pattern and `skill://` resolution gates, so a failed gate fails the build.
 
 ## License
 
