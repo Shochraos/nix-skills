@@ -18,8 +18,8 @@ jobs:
       - name: Install Nix
         uses: cachix/install-nix-action@v31
 
-      - name: Update the four skill-source inputs
-        run: nix flake update superpowers nixos-skill vercel-skills wshobson-agents
+      - name: Update the six skill-source inputs
+        run: nix flake update superpowers nixos-skill vercel-skills wshobson-agents qt-agent-skills anthropics-skills
 
       - name: Build both skill payloads through the gates
         run: nix flake check --print-build-logs

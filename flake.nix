@@ -27,6 +27,10 @@
       url = "github:TheQtCompanyRnD/agent-skills";
       flake = false;
     };
+    anthropics-skills = {
+      url = "github:anthropics/skills";
+      flake = false;
+    };
   };
 
   outputs =
@@ -38,6 +42,7 @@
       vercel-skills,
       wshobson-agents,
       qt-agent-skills,
+      anthropics-skills,
     }:
     let
       systems = [
@@ -62,6 +67,7 @@
                 vercel-skills
                 wshobson-agents
                 qt-agent-skills
+                anthropics-skills
                 ;
             };
           };

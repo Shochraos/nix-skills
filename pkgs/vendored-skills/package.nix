@@ -6,6 +6,7 @@
   vercel-skills,
   wshobson-agents,
   qt-agent-skills,
+  anthropics-skills,
 }:
 let
   createReadmeSkill = fetchurl {
@@ -154,6 +155,8 @@ runCommandLocal "vendored-skills"
     cp -r ${wshobson-agents}/plugins/shell-scripting/skills/. $out/
     cp -r ${wshobson-agents}/plugins/systems-programming/skills/memory-safety-patterns $out/memory-safety-patterns
     cp -r ${wshobson-agents}/plugins/cicd-automation/skills/github-actions-templates $out/github-actions-templates
+    cp -r ${wshobson-agents}/plugins/avoid-ai-writing/skills/avoid-ai-writing $out/avoid-ai-writing
+    cp -r ${anthropics-skills}/skills/doc-coauthoring $out/doc-coauthoring
     install -Dm644 ${createReadmeSkill} $out/create-readme/SKILL.md
 
     chmod -R u+w $out

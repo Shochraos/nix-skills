@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "anthropics-skills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1787332253,
+        "narHash": "sha256-nVid8vENmLDh7ffDqh+bJbEWtXcVltA0qa2rItmniZM=",
+        "owner": "anthropics",
+        "repo": "skills",
+        "rev": "3b3fad96af16a10759d930941b4520ba0c40edae",
+        "type": "github"
+      },
+      "original": {
+        "owner": "anthropics",
+        "repo": "skills",
+        "type": "github"
+      }
+    },
     "nixos-skill": {
       "flake": false,
       "locked": {
@@ -50,6 +66,7 @@
     },
     "root": {
       "inputs": {
+        "anthropics-skills": "anthropics-skills",
         "nixos-skill": "nixos-skill",
         "nixpkgs": "nixpkgs",
         "qt-agent-skills": "qt-agent-skills",
