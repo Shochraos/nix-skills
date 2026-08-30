@@ -19,8 +19,12 @@ cp ~/.omp/agent/agent.db ~/.omp/agent/agent.db-wal ~/.omp/agent/agent.db-shm "$d
 ln -s ~/.omp/agent/cache "$d/cache"
 
 PI_CODING_AGENT_DIR="$d" PI_CONFIG_FILES="$hmf/.omp/agent/nix-config.yml" \
-  omp -p --model haiku '<probe>'
+  omp -p '<probe>'
 ```
+
+Never pass a `--model` flag. Probes run on the primary model exactly as a
+normal session does — a cheaper model for throwaway probes is prohibited by
+the global `never.md` rule.
 
 Cleanup needs `chmod -R u+w` first — the copied rule files come from the store read-only:
 `chmod -R u+w /tmp/ompprobe.* && rm -rf /tmp/ompprobe.*`
