@@ -77,6 +77,7 @@
         in
         payloads
         // {
+          scrapling-runtime = pkgs.callPackage ./pkgs/scrapling-runtime/package.nix { };
           default = pkgs.symlinkJoin {
             name = "nix-skills";
             paths = nixpkgs.lib.attrValues payloads;
